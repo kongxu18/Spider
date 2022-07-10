@@ -1,4 +1,4 @@
-笔记
+笔记 
 1.反爬虫
 代理池，cookie池，请求头：user-agent，refer，js逆向
 2.爬虫框架scrapy
