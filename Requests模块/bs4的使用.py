@@ -102,3 +102,17 @@ res = soup.find_all(has_class_no_id)
 # limit 参数限制条数
 
 # recursive 参数 默认True 递归查找,寻找子子孙孙；False 不递归，只找第一层
+
+# css选择
+ret = soup.select('#my_p')
+ret1 = soup.select('body p')
+ret2 = soup.select('body>p')[0].text
+print(ret)
+
+"""
+bs4 的修改文档树 软件配置文件是xml格式
+ini
+conf
+xml
+yaml 格式
+"""
