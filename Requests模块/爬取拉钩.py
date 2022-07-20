@@ -19,7 +19,7 @@ Cookie = Cookie.encode('utf8')
 # print(Cookie)
 header['Cookie'] = Cookie
 # 原始的url
-urls = 'https://www.lagou.com/jobs/list_python/p-city_3?&cl=false&fromSearch=true&labelWords=&suginput='
+urls = 'https://www.lagou.com/jobs/list_python?labelWords=&fromSearch=true&suginput='
 # 建立session
 s = requests.Session()
 # 获取搜索页的cookies
