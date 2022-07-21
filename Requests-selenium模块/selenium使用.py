@@ -57,6 +57,7 @@ tag.clear()  # 清空
 """
 执行js
 作用:控制台执行js代码
+打开标签，往下滑动
 """
 bro.execute_script('alert(111)')
 
