@@ -24,7 +24,7 @@
 ## 2 scrapy安装（windows，mac，linux）
 
 ```python
-#1 pip3 install scrapy框架（mac，linux）
+#1 pip3 install scrapy（mac，linux）
 #2 windows上（80%能成功，少部分人成功不了）
 	1、pip3 install wheel #安装后，便支持通过wheel文件安装软件，wheel文件官网：https://www.lfd.uci.edu/~gohlke/pythonlibs
     3、pip3 install lxml
@@ -42,38 +42,19 @@
 ## 3 scrapy 创建项目，创建爬虫，运行爬虫
 
 ```python
-1
-scrapy
-startproject
-项目名
--scrapy
-startproject
-firstscrapy
-2
-创建爬虫
--scrapy
-genspider
-爬虫名
-爬虫地址
--scrapy
-genspider
-chouti
-dig.chouti.com
--一执行就会在spider文件夹下创建出一个py文件，名字叫chouti
-3
-运行爬虫
--scrapy
-crawl
-chouti  # 带运行日志
--scrapy
-crawl
-chouti - -nolog  # 不带日志
-4
-支持右键执行爬虫
--在项目路径下新建一个main.py
-from scrapy框架.cmdline import execute
-
-execute(['scrapy框架', 'crawl', 'chouti', '--nolog'])
+1 scrapy startproject 项目名
+	-scrapy startproject firstscrapy
+2 创建爬虫
+	-scrapy genspider 爬虫名 爬虫地址
+    -scrapy genspider chouti dig.chouti.com
+    -一执行就会在spider文件夹下创建出一个py文件，名字叫chouti
+3 运行爬虫
+	-scrapy crawl chouti   # 带运行日志
+    -scrapy crawl chouti --nolog  # 不带日志
+4 支持右键执行爬虫
+	-在项目路径下新建一个main.py
+    from scrapy.cmdline import execute
+	execute(['scrapy','crawl','chouti','--nolog'])
 ```
 
 
@@ -173,4 +154,3 @@ https://juejin.im/post/6857287743966281736
 4 （部分）爬取cnblogs文章，把标题连接地址和文章内容保存到mysql，连续爬取n页
 5 （部分）登录到抽屉获取cookie，使用requests给文章点赞
 ```
-
