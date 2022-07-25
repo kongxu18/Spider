@@ -6,7 +6,10 @@
 import scrapy
 
 
-class FirstscrapyItem(scrapy.Item):
+class ChoutiItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    title = scrapy.Field()
+    url = scrapy.Field()
+    pic_url = scrapy.Field()
+
