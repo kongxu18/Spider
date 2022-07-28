@@ -4,6 +4,7 @@ from lxml import etree
 from scrapy.http.request import Request
 from firstscrapy.items import ChoutiItem
 
+
 class ChoutiSpider(scrapy.Spider):
     name = 'chouti'
     allowed_domains = ['dig.chouti.com']
@@ -19,14 +20,16 @@ class ChoutiSpider(scrapy.Spider):
         # title = response.css('.link-title')
         # .extract() 把对象的值取出来
         # 解析出所有标题，图片，地址
+        print(response.headers)
         divs = response.xpath('//div[contains(@class,"link-item")]')
         for div in divs:
             item = ChoutiItem()
             # a_list = div.xpath('//a[contains(@class,"link-title")]')
-            title = div.css('.link-title::text').extract_first()
+            title: str = div.css('.link-title::text').extract_first()
             url = div.css('.link-title::attr(href)').extract_first()
             pic_url = div.css('.image-scale::attr(src)').extract_first()
-
+            title = title.replace('\u200b', '')
+            # print(repr(title))
             item['title'] = title
             item['url'] = url
             item['pic_url'] = pic_url if pic_url else ''
@@ -37,11 +40,9 @@ class ChoutiSpider(scrapy.Spider):
         使用自带的解析
         持久化：1.保存到本地文件
         终端 运行 scrapy crawl chouti -o chouti.csv
-        :param response:
-        :param kwargs:
-        :return:
+        -o 代表 output
         """
-        li  = []
+        li = []
         # title = response.css('.link-title')
         # .extract() 把对象的值取出来
         # 解析出所有标题，图片，地址
@@ -51,7 +52,7 @@ class ChoutiSpider(scrapy.Spider):
             title = div.css('.link-title::text').extract_first()
             url = div.css('.link-title::attr(href)').extract_first()
             pic_url = div.css('.image-scale::attr(src').extract_first()
-            li.append({'title':title,'url':url,'pic_path':pic_url})
+            li.append({'title': title, 'url': url, 'pic_path': pic_url})
             return li
 
     def parse4(self, response, **kwargs):

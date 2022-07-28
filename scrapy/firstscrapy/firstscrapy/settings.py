@@ -68,7 +68,7 @@ LOG_LEVEL = 'ERROR'
 # 数字大小代表优先级
 ITEM_PIPELINES = {
     'firstscrapy.pipelines.ChoutiFilePipeline': 300,
-    'firstscrapy.pipelines.ChoutiMysqlPipeline': 300,
+    'firstscrapy.pipelines.ChoutiMysqlPipeline': 305,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
