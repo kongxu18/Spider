@@ -8,7 +8,7 @@ from PIL import Image
 
 # 引入超级鹰
 
-from chaojiying import Chaojiying_Client
+from 超级鹰 import Chaojiying_Client
 
 
 from selenium.webdriver import ActionChains
