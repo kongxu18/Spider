@@ -13,3 +13,9 @@ class ChoutiItem(scrapy.Item):
     url = scrapy.Field()
     pic_url = scrapy.Field()
 
+
+class CnblogsItem(scrapy.Item):
+    title = scrapy.Field()
+    url = scrapy.Field()
+    desc = scrapy.Field()
+    content = scrapy.Field()

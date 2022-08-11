@@ -57,3 +57,5 @@ class ChoutiMysqlPipeline:
         curser.execute(sql,[title,item['url'],item['pic_url']])
         self.conn.commit()
         return item
+
+

@@ -20,7 +20,7 @@ class ChoutiSpider(scrapy.Spider):
         # title = response.css('.link-title')
         # .extract() 把对象的值取出来
         # 解析出所有标题，图片，地址
-        print(response.headers)
+        # print(response.headers)
         divs = response.xpath('//div[contains(@class,"link-item")]')
         for div in divs:
             item = ChoutiItem()

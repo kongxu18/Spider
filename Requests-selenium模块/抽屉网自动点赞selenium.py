@@ -62,8 +62,15 @@ header_dict = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:103.0) Gecko/20100101 Firefox/103.0",
     "X-Requested-With": "XMLHttpRequest"
 }
-argument = requests.post('https://dig.chouti.com/link/vote', headers=header_dict,cookies=cookie,
-                         data={'linkId': "35838202"})
-print(argument.text)
+giveLike = requests.post('https://dig.chouti.com/link/vote', headers=header_dict, cookies=cookie,
+                         data={'linkId': "35945459"})
+print(giveLike.text)
 
+# 评论
+data = {'content': "哈哈哈,我来评论了", 'linkId': "35945459",
+        'parentId': "0", 'pictureUrl': "", "subjectId": "1"}
+argument = requests.post('https://dig.chouti.com/comments/create', headers=header_dict, cookies=cookie,
+                         data=data)
+
+print(argument.text,'评论')
 driver.close()
